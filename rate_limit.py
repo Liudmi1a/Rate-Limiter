@@ -1,5 +1,5 @@
 from storage import RedisStorage
-from typing import Dict, Tuple, Optional
+from typing import Dict, Tuple, Optional 
 import time
 
 class RateLimiter:
@@ -92,4 +92,5 @@ class RateLimiter:
     def _get_current_window(self, window_seconds: int) -> str:
         current_time = int(time.time())
         window_number = current_time // window_seconds
+
         return str(window_number)

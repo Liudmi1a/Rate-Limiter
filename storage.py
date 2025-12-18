@@ -1,4 +1,4 @@
-import redis
+import redis 
 import json
 
 class RedisStorage:
@@ -21,4 +21,5 @@ class RedisStorage:
             return default_config
     
     def is_connected(self) -> bool:
+
         return self.redis.ping()

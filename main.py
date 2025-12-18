@@ -1,4 +1,4 @@
-from fastapi import FastAPI, HTTPException, Request
+from fastapi import FastAPI, HTTPException, Request 
 from pydantic import BaseModel
 from rate_limit import RateLimiter
 
@@ -125,4 +125,5 @@ def reset_counters():
         limiter.reset_counters()
         return {"status": "успех", "message": "Все счетчики сброшены"}
     except Exception as e:
+
         raise HTTPException(status_code=500, detail=f"Ошибка сброса: {str(e)}")

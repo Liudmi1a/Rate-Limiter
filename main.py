@@ -125,4 +125,5 @@ def reset_counters():
         limiter.reset_counters()
         return {"status": "успех", "message": "Все счетчики сброшены"}
     except Exception as e:
-        raise HTTPException(status_code=500, detail=f"Ошибка сброса: {str(e)}")
+
+        raise HTTPException(status_code=500, detail=f"Ошибка сброса: {str(e)}") 

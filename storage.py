@@ -1,11 +1,20 @@
 import redis
 import json
+import os
+from dotenv import load_dotenv
+
+#переменные из .env файла
+load_dotenv()
 
 class RedisStorage:
+    
     def __init__(self):
+        host = os.getenv("REDIS_HOST", "localhost")   #из .env или 'localhost'
+        port = int(os.getenv("REDIS_PORT", 6379))     # <из .env или 6379
+        
         self.redis = redis.Redis(
-            host='localhost', 
-            port=6379, 
+            host=host,         
+            port=port,        
             decode_responses=True
         )
     

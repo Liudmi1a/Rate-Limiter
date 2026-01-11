@@ -1,0 +1,28 @@
+#виртуальное окружение Python
+venv/
+#конфигурация
+.env
+.env.local
+.env.*.local
+#кэш
+__pycache__/
+*.py[cod]
+*$py.class
+.python
+#данные Redis
+*.rdb
+dump.rdb
+redis-data/
+#системные файлы
+Thumbs.db
+.DS_Store
+desktop.ini
+#конфигурации IDE и редакторов
+.vscode/
+.idea/
+*.swp
+*.swo
+#логи и временные файлы
+*.log
+*.tmp
+*.temp

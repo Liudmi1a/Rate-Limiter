@@ -1,0 +1,26 @@
+version: '3.8'
+
+services:
+  redis:
+    image: redis:7-alpine  #образ Redis
+    container_name: rate-limiter-redis
+    ports:
+      - "6379:6379"  #проброс порта Redis на хост
+    volumes:
+      - redis-data:/data  #хранилище для Redis
+    command: redis-server --appendonly yes  #вкл persistence
+
+  api:
+    build: .  #сборка образа из Dockerfile в текущей папке
+    container_name: rate-limiter-api
+    ports:
+      - "8000:8000"  #проброс порта приложения
+    environment:
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+    depends_on:
+      - redis
+    volumes:
+      - .:/app  
+volumes:
+  redis-data:  

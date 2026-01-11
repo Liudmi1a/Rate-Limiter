@@ -3,4 +3,5 @@ __pycache__/
 dump.rdb
 *.rdb
 .env
-Thumbs.db
+
+Thumbs.db 

@@ -1,5 +1,5 @@
 import redis
-import json
+import json 
 import os
 from dotenv import load_dotenv
 
@@ -30,4 +30,5 @@ class RedisStorage:
             return default_config
     
     def is_connected(self) -> bool:
+
         return self.redis.ping()
